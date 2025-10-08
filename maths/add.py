@@ -1,12 +1,25 @@
-def add_nums(num1, num2):
-    """This method will be used to add two numbers
-
-        :param int num1: The first number
-        :param int num2: The second number
-
-        :returns: The sum of two numbers
-
-        :rtype: int
+def add(*args):
     """
-    answer = num1 + num2
-    return answer
+        Suma un número indefinido de argumentos.
+
+        Parameters
+        ----------
+        *args : float
+            Números que se desean sumar. Se puede pasar 0 o más argumentos.
+
+        Returns
+        -------
+        float
+            La suma de todos los números. Si no se pasan argumentos, devuelve 0.
+
+        Examples
+        --------
+        >>> add(2, 3, 5)
+        10
+        >>> add(1)
+        1
+        >>> add()
+        0
+        """
+
+    return sum(args) if args else 0
