@@ -1,41 +1,43 @@
-name: Build and Deploy Docs
+name: Build and deploy
 
 on:
   push:
     branches:
-      - main  # se ejecuta al hacer push a main
+      - main
+
+permissions:
+  contents: write
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      # 1️⃣ Clonar el repositorio
-      - uses: actions/checkout@v3
-
-      # 2️⃣ Configurar Python
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
-          python-version: '3.x'
+          fetch-depth: 0
 
-      # 3️⃣ Instalar dependencias
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install sphinx sphinx-rtd-theme
+          pip install sphinx
 
-      # 4️⃣ Construir documentación
-      - name: Build docs
+      - name: Build HTML
         run: |
           cd docs
           python -m sphinx -b html source build/html
 
-      # 5️⃣ Publicar en GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs/build/html
           publish_branch: gh-pages
+          publish_dir: ./docs/build/html
           force_orphan: true
-
+          user_name: github-actions[bot]
+          user_email: 41898282+github-actions[bot]@users.noreply.github.com
