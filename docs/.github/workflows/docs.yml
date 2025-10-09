@@ -28,7 +28,10 @@ jobs:
           python -m sphinx -b html source build/html
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v7
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs/build/html
+  uses: peaceiris/actions-gh-pages@v7
+  with:
+    github_token: ${{ secrets.GITHUB_TOKEN }}
+    publish_dir: ./docs/build/html
+    branch: gh-pages
+    force_orphan: true
+    
