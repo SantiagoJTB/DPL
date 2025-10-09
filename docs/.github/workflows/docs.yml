@@ -3,10 +3,10 @@ name: Build and Deploy Docs
 on:
   push:
     branches:
-      - main  # se ejecuta al hacer push a main
+      - main
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -28,10 +28,10 @@ jobs:
           python -m sphinx -b html source build/html
 
       - name: Deploy to GitHub Pages
-  uses: peaceiris/actions-gh-pages@v7
-  with:
-    github_token: ${{ secrets.GITHUB_TOKEN }}
-    publish_dir: ./docs/build/html
-    branch: gh-pages
-    force_orphan: true
-    
+        uses: peaceiris/actions-gh-pages@v7
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs/build/html
+          branch: gh-pages
+          force_orphan: true
+          keep_files: false
