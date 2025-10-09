@@ -3,15 +3,14 @@ name: Build and Deploy Docs
 on:
   push:
     branches:
-      - main  # Cada vez que hagas push a main, se ejecuta
+      - main  # se ejecuta al hacer push a main
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
       - name: Set up Python
         uses: actions/setup-python@v4
