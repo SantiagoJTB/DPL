@@ -10,5 +10,14 @@ sphinx_basics documentation
    :maxdepth: 2
    :caption: Contents:
 
-   maths
+.. automodule:: maths.add
+   :members:
 
+.. automodule:: maths.divide
+   :members:
+
+.. automodule:: maths.multiply
+   :members:
+
+.. automodule:: maths.subtract
+   :members:

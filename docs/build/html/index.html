@@ -14,7 +14,6 @@
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Math Module" href="maths.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -35,17 +34,121 @@
   <section id="sphinx-basics-documentation">
 <h1>sphinx_basics documentation<a class="headerlink" href="#sphinx-basics-documentation" title="Link to this heading">¶</a></h1>
 <div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="maths.html">Math Module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="maths.html#maths.add.add"><code class="docutils literal notranslate"><span class="pre">add()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="maths.html#maths.divide.divide"><code class="docutils literal notranslate"><span class="pre">divide()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="maths.html#maths.multiply.multiply"><code class="docutils literal notranslate"><span class="pre">multiply()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="maths.html#maths.subtract.subtract"><code class="docutils literal notranslate"><span class="pre">subtract()</span></code></a></li>
-</ul>
-</li>
-</ul>
 </div>
+<dl class="py function" id="module-maths.add">
+<dt class="sig sig-object py" id="maths.add.add">
+<span class="sig-prename descclassname"><span class="pre">maths.add.</span></span><span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/maths/add.html#add"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#maths.add.add" title="Link to this definition">¶</a></dt>
+<dd><p>Suma un número indefinido de argumentos.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>*args</strong> (<em>float</em>) – Números que se desean sumar. Se puede pasar 0 o más argumentos.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>La suma de todos los números. Si no se pasan argumentos, devuelve 0.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">add</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="go">10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">add</span><span class="p">()</span>
+<span class="go">0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function" id="module-maths.divide">
+<dt class="sig sig-object py" id="maths.divide.divide">
+<span class="sig-prename descclassname"><span class="pre">maths.divide.</span></span><span class="sig-name descname"><span class="pre">divide</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/maths/divide.html#divide"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#maths.divide.divide" title="Link to this definition">¶</a></dt>
+<dd><p>Divide un número indefinido de argumentos en orden secuencial.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>*args</strong> (<em>float</em>) – Números que se desean dividir. Se debe pasar al menos un número.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>El resultado de dividir todos los números en orden. Si se pasa un solo número, devuelve ese número.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – Si se intenta dividir por cero o no se pasa ningún argumento.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">divide</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="go">10.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">divide</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="go">50</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">divide</span><span class="p">()</span>
+<span class="gt">Traceback (most recent call last):</span>
+<span class="w">    </span><span class="o">...</span>
+<span class="gr">ValueError</span>: <span class="n">Se requiere al menos un argumento.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">divide</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+<span class="w">    </span><span class="o">...</span>
+<span class="gr">ValueError</span>: <span class="n">Cannot divide by zero.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function" id="module-maths.multiply">
+<dt class="sig sig-object py" id="maths.multiply.multiply">
+<span class="sig-prename descclassname"><span class="pre">maths.multiply.</span></span><span class="sig-name descname"><span class="pre">multiply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/maths/multiply.html#multiply"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#maths.multiply.multiply" title="Link to this definition">¶</a></dt>
+<dd><p>Multiplica un número indefinido de argumentos.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>*args</strong> (<em>float</em>) – Números que se desean multiplicar. Si no se pasa ningún argumento, se devuelve 1.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>El producto de todos los números. Si no se pasa ningún argumento, devuelve 1.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">multiply</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="go">30</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">multiply</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="go">10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">multiply</span><span class="p">()</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function" id="module-maths.subtract">
+<dt class="sig sig-object py" id="maths.subtract.subtract">
+<span class="sig-prename descclassname"><span class="pre">maths.subtract.</span></span><span class="sig-name descname"><span class="pre">subtract</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/maths/subtract.html#subtract"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#maths.subtract.subtract" title="Link to this definition">¶</a></dt>
+<dd><p>Resta un número indefinido de argumentos en orden secuencial.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>*args</strong> (<em>float</em>) – Números que se desean restar. Se debe pasar al menos un número.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>El resultado de restar todos los números en orden. Si se pasa un solo número, devuelve ese número.
+Si no se pasa ningún argumento, devuelve 0.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">subtract</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
+<span class="go">10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">subtract</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="go">50</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">subtract</span><span class="p">()</span>
+<span class="go">0</span>
+</pre></div>
+</div>
+</dd></dl>
+
 </section>
 
 
@@ -74,16 +177,11 @@
     </div>
 </search>
 <script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
-<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="maths.html">Math Module</a></li>
-</ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="#">Documentation overview</a><ul>
-      <li>Next: <a href="maths.html" title="next chapter">Math Module</a></li>
   </ul></li>
 </ul>
 </div>
