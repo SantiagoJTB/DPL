@@ -20,7 +20,7 @@ def add(*args):
         1
         >>> add()
         0
-        FUNCIONAAAAAAAAAAAAAAAAAAAAAAAAAA
+        HAKUNA MATATA
         """
 
     return sum(args) if args else 0
