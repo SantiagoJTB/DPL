@@ -10,7 +10,7 @@ import os
 import sys
 sys.path.insert(0, os.path.abspath('../../'))  # Apunta a la carpeta raíz que contiene 'math'
 
-project = 'sphinx_basics'
+project = 'Web Server Apache'
 copyright = '2025, santiago torres'
 author = 'santiago torres'
 release = '1.0'
